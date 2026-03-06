@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
-from sklearn.model_selection import train_test_split
 
 # Load and Clean
 df = pd.read_csv('/content/OnlineRetail.csv', encoding='ISO-8859-1').dropna(subset=['CustomerID'])
@@ -27,6 +26,5 @@ rfm['Cluster'] = kmeans.fit_predict(rfm_scaled)
 
 print('--- RFM Analysis Output ---')
 print(rfm.head())
-print('
-Cluster Counts:')
+print('\nCluster Counts:')
 print(rfm['Cluster'].value_counts())
